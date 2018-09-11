@@ -40,7 +40,7 @@ class BlogPostTemplate extends React.Component {
             color:'#61f79e'
           }}
         />
-        <Bio />
+        {/* <Bio /> */}
 
         <ul
           style={{
