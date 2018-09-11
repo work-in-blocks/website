@@ -5,7 +5,8 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import { rhythm } from '../utils/typography'
+import media from './salty_egg.jpg'
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -23,25 +24,30 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+            <div class="media" style={{marginBottom: 25}} key={node.fields.slug}>
+              <div class="media-body">
+                <h2 class="mt-0">
+                <Link className="btn btn-link p-0"  style={{     
+                  boxShadow: 'none',
+                  fontSize: '22px',
+                  marginTop: '-20px',
+                  color: '#222',
+                  transition: 'color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out',
+                  fontWeight: 'bold', }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </h2>
+                <small style={{color: '#777', paddingBottom: 15}}>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+              {/* <img class="mr-3 img-fluid" src={media} style={{width: '15%'}} alt="Generic placeholder image"/> */}
             </div>
           )
         })}
+        {/* <Bio /> */}
       </Layout>
     )
   }

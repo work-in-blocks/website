@@ -7,6 +7,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
     "gatsby": "next",
     "gatsby-plugin-feed": "next",
     "gatsby-plugin-google-analytics": "next",
@@ -28,6 +29,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
+    "react-popper": "^1.0.0-beta.6",
     "react-typography": "^0.16.13",
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",

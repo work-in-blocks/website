@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import './bootstrap.min.css';
+import './index.css'
+import logo from './logo.png'
+import logoWhite from './white.png'
 
 import { rhythm, scale } from '../utils/typography'
+
 
 class Template extends React.Component {
   render() {
@@ -11,58 +16,43 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
+      <div className="jumbotron bg-white">
+        <div className="container-fluid">
+          <img
+            style={{ display: 'block',
+            margin: '0 auto',
+            width: '44rem',}}
+            src={logo}
+            alt={`Work In Blocks`}
+          />
+        </div>
+      </div>
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h3>
+      <div className="jumbotron" style={{
+        backgroundColor: '#333',
+        padding: '2rem 1rem',
+        borderRadius: 0,
+      }}>
+        <div className="container-fluid">
+        <img
+            style={{ display: 'block',
+            margin: '0 auto',
+            width: '25rem',}}
+            src={logoWhite}
+            alt={`Work In Blocks`}
+          />
+        </div>
+      </div>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children}
+      <div className="container-fluid p-0">
+      {header}
+      <div className="container">
+      {children}
+      </div>
       </div>
     )
   }
