@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './bootstrap.min.css';
 import './index.css'
-import logo from '../assets/logo.png'
-import logoWhite from '../assets/white.png'
+import logo from '../assets/logoW.png'
+import logoWhite from '../assets/logoblanco.png'
 
 import { rhythm, scale } from '../utils/typography'
 
