@@ -31,7 +31,7 @@ categories:
   <span class="s1">First, open access to keychains. This is an application where you can sort and manage your passwords. Inside this, you must request a certificate from a certification authority.<span class="Apple-converted-space">  </span>For this you must click on the name of the application in the menu bar and look for the option “Certificate Assistant” and at that same moment request a certificate from a certification authority.</span>
 </p>
 
-![Chinese Salty Egg](./../wp-content/uploads/2018/04/pic1-1024x340.png)
+![Keychain access](./../wp-content/uploads/2018/04/pic1-1024x340.png)
 
 <p class="p2">
   <span class="s1">Fill the requested fields and choose the option “Save the certificate on the hard drive”. In this way you can have it always at hand (Don’t change the name of the certificate).</span>
