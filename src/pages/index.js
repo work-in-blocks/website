@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import media from './salty_egg.jpg'
+import media from '../assets/salty_egg.jpg'
 
 
 class BlogIndex extends React.Component {
@@ -30,7 +30,7 @@ class BlogIndex extends React.Component {
             <div class="media" style={{marginBottom: 25}} key={node.fields.slug}>
               <div class="media-body">
                 <h2 class="mt-0">
-                <Link className="btn btn-link p-0"  style={{     
+                <Link className="btn btn-link p-0"  style={{
                   boxShadow: 'none',
                   fontSize: '22px',
                   marginTop: '-20px',
