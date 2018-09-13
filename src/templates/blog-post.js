@@ -1,24 +1,27 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { DiscussionEmbed } from "disqus-react";
+import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'
+import Share from '../components/Share'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const twitterHandle = get(this.props, 'data.site.siteMetadata.twitterHandle')
+    const url = get(this.props, 'data.site.siteMetadata.siteUrl')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
-    const disqusShortname = "workinblocks";
+    const disqusShortname = 'workinblocks'
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
-    };
-
+    }
+    const slug = post.fields.slug;
     return (
       <Layout location={this.props.location}>
         <Helmet
@@ -26,23 +29,23 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1 style={{marginBottom: 35}}>{post.frontmatter.title}</h1>
+        <h1 style={{ marginBottom: 35 }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
             marginTop: rhythm(-1),
-            color: '#777'
+            color: '#777',
           }}
         >
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }}/>
         <hr
           style={{
             marginBottom: rhythm(1),
-            color:'#61f79e'
+            color: '#61f79e',
           }}
         />
         {/* <Bio /> */}
@@ -73,7 +76,16 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <Share
+          socialConfig={{
+            twitterHandle,
+            config: {
+              url: `${url}${slug}`,
+              title: `${siteTitle}`,
+            },
+          }}
+        />
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
       </Layout>
     )
   }
@@ -85,8 +97,10 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
+        siteUrl
         title
         author
+        twitterHandle
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -97,6 +111,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
       }
+      fields {
+			  slug
+		  }
     }
   }
 `

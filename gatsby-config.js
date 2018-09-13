@@ -3,10 +3,12 @@ module.exports = {
     title: 'work in blocks | Software Development Community',
     author: 'Angel Lacret',
     description: 'A software development community blog',
-    siteUrl: 'https://workinblocks.com/',
+    siteUrl: 'https://workinblocks.com',
+    twitterHandle: '@workinblocks',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
