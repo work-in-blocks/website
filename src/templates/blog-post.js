@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
-    const disqusShortname = "alacret";
+    const disqusShortname = "workinblocks";
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
