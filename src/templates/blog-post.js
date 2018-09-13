@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+import { DiscussionEmbed } from "disqus-react";
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 
@@ -13,6 +13,11 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
+    const disqusShortname = "alacret";
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+    };
 
     return (
       <Layout location={this.props.location}>
@@ -40,7 +45,7 @@ class BlogPostTemplate extends React.Component {
             color:'#61f79e'
           }}
         />
-        <Bio />
+        {/* <Bio /> */}
 
         <ul
           style={{
@@ -49,7 +54,7 @@ class BlogPostTemplate extends React.Component {
             justifyContent: 'space-between',
             listStyle: 'none',
             padding: 0,
-            
+
           }}
         >
           {previous && (
@@ -68,6 +73,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
     )
   }
