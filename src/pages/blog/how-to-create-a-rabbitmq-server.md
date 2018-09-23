@@ -1,3 +1,18 @@
+---
+title: 'How to create a RabbitMQ User'
+date: 2018-01-23T15:31:26+00:00
+author: alacret
+layout: post
+permalink: /how-to-create-a-rabbitmq-user/
+image: /wp-content/uploads/2018/04/1_6WSm4DEcxYwf4-wDuh_wLQ.png
+categories:
+  - Code Test
+  - News
+  - Software Testing
+tags:
+  - Software Testing and Quality Assurance
+---
+
 # How to create a RabbitMQ user
 
 After you install the rabbitmq-server it is normal that you secure the service and create a new user for accessing the service.
