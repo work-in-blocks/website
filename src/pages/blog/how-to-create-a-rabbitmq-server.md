@@ -1,6 +1,6 @@
 ---
 title: 'How to create a RabbitMQ User'
-date: 2018-01-23T15:31:26+00:00
+date: 2018-09-24T15:31:26+00:00
 author: alacret
 layout: post
 permalink: /how-to-create-a-rabbitmq-user/
