@@ -19,7 +19,6 @@ Here, we explain the problem, choose a convetion, and explain the reasons:
 <TODO>
 ## 4) File Structure
 <TODO>
-## 5) Type Checking
 <TODO>
 ## 6) Css and Theme
 <TODO>
